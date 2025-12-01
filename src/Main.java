@@ -11,6 +11,13 @@ import java.net.URISyntaxException;
  * @version V1.3
  */
 public class Main {
+
+    private static final int YEAR = 2025;
+    private static final int DAY = 1;
+
+    /**
+     * Private constructor to prevent instantiation.
+     */
     private Main() {
     }
 
@@ -23,24 +30,18 @@ public class Main {
      */
     public static void main(String[] args) throws IOException, URISyntaxException {
 
-        // Please change the year and day to the desired challenge
-        int year = 2025;
-        int day = 1;
-
-        if (AoCDownloader.doesFileExistOrIsDownloaded(year, day, true)) {
+        if (AoCDownloader.doesFileExistOrIsDownloaded(YEAR, DAY, true)) {
             System.out.println("Calculating the result for the challenge...");
-            String filePath = "data/AoC_" + year + "_" + String.format("%02d", day) + ".txt";
-            String className = "AoC" + year + String.format("%02d", day);
+            String filePath = "data/AoC_" + YEAR + "_" + String.format("%02d", DAY) + ".txt";
+            String className = "AoC" + YEAR + String.format("%02d", DAY);
 
             try {
-                Class<?> usedClass = Class.forName("year" + year + "." + className);
+                Class<?> usedClass = Class.forName("year" + YEAR + "." + className);
                 Method partOneMethod = usedClass.getMethod("partOne", String.class);
-                System.out.println(year + " Day " + day + ", Part 1: " + partOneMethod.invoke(null, filePath));
+                System.out.println(YEAR + " Day " + DAY + ", Part 1: " + partOneMethod.invoke(null, filePath));
 
-                if (day != 25) {
-                    Method partTwoMethod = usedClass.getMethod("partTwo", String.class);
-                    System.out.println(year + " Day " + day + ", Part 2: " + partTwoMethod.invoke(null, filePath));
-                }
+                Method partTwoMethod = usedClass.getMethod("partTwo", String.class);
+                System.out.println(YEAR + " Day " + DAY + ", Part 2: " + partTwoMethod.invoke(null, filePath));
             } catch (Exception e) {
                 e.printStackTrace();
             }
