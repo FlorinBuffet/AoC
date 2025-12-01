@@ -5,7 +5,7 @@ import java.lang.reflect.Method;
 import java.net.URISyntaxException;
 
 /**
- * This class solves AdventofCode 2024
+ * This class solves AdventofCode
  *
  * @author Florin Buffet
  * @version V1.3
@@ -25,8 +25,8 @@ public class Main {
     public static void main(String[] args) throws IOException, URISyntaxException {
 
         // Please change the year and day to the desired challenge
-        int year = 2024;
-        int day = 19;
+        int year = 2025;
+        int day = 1;
 
         if (AoCDownloader.doesFileExistOrIsDownloaded(year, day, true)) {
             System.out.println("Calculating the result for the challenge...");
