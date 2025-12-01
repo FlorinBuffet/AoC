@@ -1,4 +1,4 @@
-package year2024Test;
+package year2025Test;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Assumptions;
@@ -15,20 +15,20 @@ import java.util.Properties;
 import java.util.stream.Stream;
 
 /**
- * This class contains unit tests for AdventofCode.
+ * This class contains unit tests for Advent of Code.
  * It tests both parts of the challenge using sample and personal inputs.
  *
  * @author Florin Buffet
- * @version V1.0
+ * @version V1.1
  */
 @SuppressWarnings("StringConcatenationMissingWhitespace")
-class AoC202423Test {
+class AoC202501Test {
 
     // set these constants to the day's input
-    private static final int YEAR = 2024;
-    private static final int DAY = 23;
-    private static final int PERSONAL_RESULT_PART1 = 1253;
-    private static final String PERSONAL_RESULT_PART2 = "ag,bt,cq,da,hp,hs,mi,pa,qd,qe,qi,ri,uq";
+    private static final int YEAR = 2025;
+    private static final int DAY = 1;
+    private static final int PERSONAL_RESULT_PART1 = 964;
+    private static final int PERSONAL_RESULT_PART2 = 5872;
 
     // Creates the path to the sample files
     private static final String PATH_SAMPLE = "test/year" + YEAR + "Test/samples/AoC_" + YEAR + "_" + String.format("%02d", DAY) + "_";
@@ -76,8 +76,7 @@ class AoC202423Test {
      */
     @ParameterizedTest(name = "{0} is expected to output {1}")
     @MethodSource("inputAndResultsSamples")
-    void partOneSamples(String sample, int expectedResult) throws Exception {
-        Assumptions.assumeFalse(expectedResult == -1, "This test is not relevant for part one.");
+    void partOneSampleA(String sample, int expectedResult) throws Exception {
         Assertions.assertEquals(expectedResult, partOneMethod.invoke(null, PATH_SAMPLE + sample + ENDING), ERROR_MESSAGE_PART1 + sample + ERROR_MESSAGE_ENDING);
     }
 
@@ -103,8 +102,7 @@ class AoC202423Test {
      */
     @ParameterizedTest(name = "{0} is expected to output {2}")
     @MethodSource("inputAndResultsSamples")
-    void partTwoSamples(String sample, int irrelevant, String expectedResult) throws Exception {
-        Assumptions.assumeFalse(expectedResult == "-1", "This test is not relevant for part two.");
+    void partTwoSampleA(String sample, int irrelevant, int expectedResult) throws Exception {
         Assertions.assertEquals(expectedResult, partTwoMethod.invoke(null, PATH_SAMPLE + sample + ENDING), ERROR_MESSAGE_PART2 + sample + ERROR_MESSAGE_ENDING);
     }
 
@@ -126,8 +124,6 @@ class AoC202423Test {
      * @return a stream of arguments containing sample inputs and expected results
      */
     private static Stream<Arguments> inputAndResultsSamples() {
-        return Stream.of(
-                Arguments.of("a", 7, "co,de,ka,ta")
-        );
+        return Stream.of(Arguments.of("a", 3, 6));
     }
 }

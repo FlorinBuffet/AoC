@@ -59,9 +59,9 @@ public class InputParser {
      * Parses a list of lists of strings from the given Scanner.
      * Each line of input is split into strings using the specified delimiter.
      *
-     * @param scan the Scanner to read the input from
+     * @param scan           the Scanner to read the input from
      * @param delimiterRegex the delimiter to use when splitting the strings as regex
-     * @param remove the character sequence to remove from the input before splitting
+     * @param remove         the character sequence to remove from the input before splitting
      * @return a list of lists of strings, where each inner list represents a line of input
      */
     public static List<List<String>> parseStringListPerLine(Scanner scan, String delimiterRegex, CharSequence remove) {
@@ -81,7 +81,7 @@ public class InputParser {
      * Parses a list of lists of strings from the given Scanner.
      * Each line of input is split into strings using the specified delimiter.
      *
-     * @param scan the Scanner to read the input from
+     * @param scan           the Scanner to read the input from
      * @param delimiterRegex the delimiter to use when splitting the strings as regex
      * @return a list of lists of strings, where each inner list represents a line of input
      */
@@ -101,7 +101,7 @@ public class InputParser {
      * Parses a list of lists of integers from the given Scanner.
      * Each line of input is split into integers using the specified delimiter.
      *
-     * @param scan the Scanner to read the input from
+     * @param scan           the Scanner to read the input from
      * @param delimiterRegex the delimiter as regex to use when splitting the integers
      * @return a list of lists of strings, where each inner list represents a line of input
      */
@@ -122,9 +122,9 @@ public class InputParser {
      * Parses a list of lists of longs from the given Scanner.
      * Each line of input is split into longs using the specified delimiter.
      *
-     * @param scan the Scanner to read the input from
+     * @param scan           the Scanner to read the input from
      * @param delimiterRegex the delimiter as regex to use when splitting the longs
-     * @param remove the character sequence to remove from the input before splitting
+     * @param remove         the character sequence to remove from the input before splitting
      * @return a list of lists of strings, where each inner list represents a line of input
      */
     @SuppressWarnings("MethodWithMultipleReturnPoints")
@@ -152,6 +152,21 @@ public class InputParser {
         List<Integer> list = new ArrayList<>();
         while (scan.hasNextInt()) {
             list.add(scan.nextInt());
+        }
+        return list;
+    }
+
+    /**
+     * Parses a list of strings from the given Scanner.
+     * The method reads strings from the Scanner until no more strings are available.
+     *
+     * @param scan the Scanner to read the strings from
+     * @return a list of strings parsed from the Scanner
+     */
+    public static List<String> parseStringList(Scanner scan) {
+        List<String> list = new ArrayList<>();
+        while (scan.hasNextLine()) {
+            list.add(scan.nextLine());
         }
         return list;
     }
