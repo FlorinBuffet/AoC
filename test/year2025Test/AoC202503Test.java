@@ -21,13 +21,13 @@ import java.util.stream.Stream;
  * @author Florin Buffet
  */
 @SuppressWarnings("StringConcatenationMissingWhitespace")
-class AoC202501Test {
+class AoC202503Test {
 
     // set these constants to the day's input
     private static final int YEAR = 2025;
-    private static final int DAY = 1;
-    private static final int PERSONAL_RESULT_PART1 = 964;
-    private static final int PERSONAL_RESULT_PART2 = 5872;
+    private static final int DAY = 3;
+    private static final int PERSONAL_RESULT_PART1 = 17405;
+    private static final long PERSONAL_RESULT_PART2 = 171990312704598L;
 
     // Creates the path to the sample files
     private static final String PATH_SAMPLE = "test/year" + YEAR + "Test/samples/AoC_" + YEAR + "_" + String.format("%02d", DAY) + "_";
@@ -101,7 +101,7 @@ class AoC202501Test {
      */
     @ParameterizedTest(name = "{0} is expected to output {2}")
     @MethodSource("inputAndResultsSamples")
-    void partTwoSampleA(String sample, int irrelevant, int expectedResult) throws Exception {
+    void partTwoSampleA(String sample, long irrelevant, long expectedResult) throws Exception {
         Assertions.assertEquals(expectedResult, partTwoMethod.invoke(null, PATH_SAMPLE + sample + ENDING), ERROR_MESSAGE_PART2 + sample + ERROR_MESSAGE_ENDING);
     }
 
@@ -123,6 +123,6 @@ class AoC202501Test {
      * @return a stream of arguments containing sample inputs and expected results
      */
     private static Stream<Arguments> inputAndResultsSamples() {
-        return Stream.of(Arguments.of("a", 3, 6));
+        return Stream.of(Arguments.of("a", 357, 3121910778619L));
     }
 }

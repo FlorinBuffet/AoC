@@ -19,7 +19,6 @@ import java.util.stream.Stream;
  * It tests both parts of the challenge using sample and personal inputs.
  *
  * @author Florin Buffet
- * @version V1.1
  */
 @SuppressWarnings("StringConcatenationMissingWhitespace")
 class AoC202502Test {

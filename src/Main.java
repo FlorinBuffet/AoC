@@ -13,7 +13,7 @@ import java.net.URISyntaxException;
 public class Main {
 
     private static final int YEAR = 2025;
-    private static final int DAY = 2;
+    private static final int DAY = 3;
 
     /**
      * Private constructor to prevent instantiation.

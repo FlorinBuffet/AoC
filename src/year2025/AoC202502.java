@@ -11,7 +11,6 @@ import java.util.Scanner;
  * This class solves Advent of Code 2025, Day 2.
  *
  * @author Florin Buffet
- * @version V1.0
  */
 public class AoC202502 {
     /**
