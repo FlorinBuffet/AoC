@@ -8,12 +8,11 @@ import java.net.URISyntaxException;
  * This class solves Advent of Code
  *
  * @author Florin Buffet
- * @version V1.3
  */
 public class Main {
 
     private static final int YEAR = 2025;
-    private static final int DAY = 4;
+    private static final int DAY = 5;
 
     /**
      * Private constructor to prevent instantiation.

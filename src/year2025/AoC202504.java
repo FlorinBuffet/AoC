@@ -63,6 +63,13 @@ public class AoC202504 {
         return removedRolls;
     }
 
+    /**
+     * Counts the number of accessible rolls in the data.
+     *
+     * @param data   the character matrix representing the rolls
+     * @param remove if true, removes the accessible rolls from the data
+     * @return the number of accessible rolls
+     */
     private static int countAccessibleRolls(char[][] data, boolean remove) {
         int rolls = 0;
         int[][] directions = {
